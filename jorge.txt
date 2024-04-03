@@ -1,0 +1,48 @@
+CREATE TABLE movies {
+    caminho_arquivo TEXT,
+    titulo TEXT,
+    duracao_minutos INTEGER,
+    data_lancamento DATE,
+    artistas_principais TEXT,
+    diretor TEXT,
+    poster TEXT,
+    generos TEXT
+};
+
+CREATE TABLE cast {
+    nome TEXT,
+    data_nascimento DATE,
+    data_falecimento DATE,
+    tipo TEXT,
+    biografia TEXT,
+    filme_conhecido TEXT
+};
+
+
+CREATE TABLE users {
+    email TEXT,
+    senha TEXT,
+    nome_completo TEXT,
+    idade INTEGER,
+    generos_preferidos TEXT,
+    data_criacao DATE,
+    ultimo_acesso TIMESTAMP,
+    celular TEXT,
+    plano TEXT
+};
+
+CREATE TABLE plans {
+    nome TEXT,
+    preco DECIMAL(10, 2),
+    recorrencia TEXT,
+    descricao TEXT,
+    qtd_aparelhos_logados INTEGER
+};
+
+ALTER TABLE filmes ADD CONSTRAINT pk_movies PRIMARY KEY (caminho_arquivo);
+
+ALTER TABLE cast ADD CONSTRAINT pk_artistas_diretores PRIMARY KEY (nome);
+
+ALTER TABLE users ADD CONSTRAINT pk_usuarios PRIMARY KEY (email);
+
+ALTER TABLE plans ADD CONSTRAINT pk_planos PRIMARY KEY (nome);
